@@ -17,6 +17,7 @@ export default new Router({
     {
       path:'/',
       name:'home',
+      redirect:'dashboard',
       component:resolve => require(['@/components/Home'],resolve),
     
       beforeEnter:(to,from,next) => {
