@@ -19,7 +19,7 @@
 export default {
     data(){
         return {
-            activeName:'first',
+            activeName:'',
             tabsArr:[
                 {label:'用于管理',name:'first'},
                 {label:'配置管理',name:'second'},

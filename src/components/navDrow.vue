@@ -2,7 +2,8 @@
 <div class="nav-drow">
     <el-dropdown @command="handleCommand">
         <el-button type="primary">
-            管理员<i class="el-icon-arrow-down el-icon--right"></i>
+            {{name}}
+            <i class="el-icon-arrow-down el-icon--right"></i>
         </el-button>
         <!-- 插槽  -->
         <el-dropdown-menu slot="dropdown">
@@ -21,7 +22,7 @@
 export default {
     data(){
         return{
-           
+          
         }
     },
     methods:{
@@ -29,7 +30,15 @@ export default {
            if(e=="登录"){
               this.$router.push({name:'login'})
               this.$store.state.status=true;
+           }else if(e == "修改"){
+               this.$router.push({name:'zhiliao'})
            }
+        }
+    },
+    // 使用计算属性来完成动态修改
+    computed:{
+        name(){
+            return this.$store.state.name
         }
     }
 }

@@ -7,7 +7,7 @@ export default new Router({
   routes: [
     {
       path:'/',
-      redirect:'/login',
+      redirect: 'dashboard'
     },
     {
       path: '/login',
@@ -15,9 +15,10 @@ export default new Router({
       component: resolve => require(['@/components/login'],resolve),
     },
     {
-      path:'/home',
+      path:'/',
       name:'home',
       component:resolve => require(['@/components/Home'],resolve),
+    
       beforeEnter:(to,from,next) => {
         console.log(store.state.status)
         if(store.state.status || to.name === 'login'){
@@ -35,9 +36,21 @@ export default new Router({
           path:'guanli',
           name:'guanli',
           component:resolve => require(['@/page/guanli'],resolve)
-        }
+        },
+        {
+          path:'zhiliao',
+          name:'zhiliao',
+          component:resolve => require(['@/page/gerenziliao'],resolve)
+        },
+        {//菜单栏展示路由地址  子路由加/ 就是把父路由的路径当成根路径
+          path: '/dashboard',
+          name: 'dashboard',
+          component: resolve => require(['@/page/daohang'], resolve)
+        },
       ]
     },
+  
+    ,
     {
       path:'*',
       component:resolve => require(['@/components/404'],resolve)
