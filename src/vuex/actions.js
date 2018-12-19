@@ -11,20 +11,10 @@ export default{
     LoginByUsername({ commit }, userInfo){
         // 获取到用户名
         const username=userInfo.username;
-     return   axios.post(HOST+'/login',{
+     return  axios.post(HOST+'/login',{
             'password':'1',
             'username':username
-        }).then((result) => {
-            if(result.status==200){
-                commit('SET_STATUS',false);
-                commit('SET_TOKEN', '你好');
-                 console.log(2); 
-                return result
-            }     
-        }).catch((err) => {
-            console.log(err);
-            return err
-        });
+        })
     },
     
 

@@ -64,36 +64,22 @@
           const userInfo={
             username:this.ruleForm2.id
           }
-          console.log(userInfo)
+          // console.log(userInfo)
           // vuex登录
           this.$store.dispatch('LoginByUsername',userInfo).then((result) => {
             console.log(result)
-             //  修改name
+            if(result.status==200){
+                //  修改name
             this.$store.commit('SET_NAME',this.ruleForm2.id);
-            // this.$store.state.status=!this.$store.state.state;
-            this.$router.push({name:'home'});
-            
+            // 修改判断条件
+            this.$store.commit('SET_STATUS',false);
+             this.$router.push({name:'home'});
+            }
+          
           }).catch((err) => {
             console.log(err)
           });
        
-          
-            // this.$http.post(this.HOST+'/login',{
-            //             'password':'1',
-            //             'username':'1',
-            //             'uid':'1'
-            //           }).then((result) => {
-            //               // console.table(result.headers[x-auth-token]);
-            //               // 本地存储token 
-            //               // localStorage.setItem('x-auth-token',result.headers['x-auth-token']);
-            //               // console.log(result.headers.x-auth-token)
-            //               // 跳转路由
-            //               this.$router.push({name:'home'}); 
-            //                  this.$store.state.status=false;
-            //           }).catch((err) => {
-            //               console.log(err)
-            //           });
-          
           } else {
             alert("登录失败");
             return false;

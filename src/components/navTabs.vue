@@ -30,6 +30,7 @@ export default {
     },
     methods:{
         handleClick(){
+            // 路由传递参数
             this.$router.push({
                 name:'guanli',
                 query:{name:this.activeName}
