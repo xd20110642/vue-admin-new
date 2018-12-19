@@ -28,8 +28,8 @@ export default {
     methods:{
         handleCommand(e){
            if(e=="登录"){
+               this.$store.commit('SET_STATUS',true)
               this.$router.push({name:'login'})
-              this.$store.state.status=true;
            }else if(e == "修改"){
                this.$router.push({name:'zhiliao'})
            }

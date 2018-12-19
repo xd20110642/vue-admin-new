@@ -29,17 +29,17 @@ export default new Router({
           })
          }else{
            next();
-           store.state.status=true;
+          store.state.status=true;
          }
       },
       children:[
         {
-          path:'guanli',
+          path:'/guanli',
           name:'guanli',
           component:resolve => require(['@/page/guanli'],resolve)
         },
         {
-          path:'zhiliao',
+          path:'/zhiliao',
           name:'zhiliao',
           component:resolve => require(['@/page/gerenziliao'],resolve)
         },

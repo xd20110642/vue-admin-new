@@ -7,10 +7,18 @@ const path = require('path')
 module.exports = {
   dev: {
 
-    // Paths
+    // Paths 添加跨域请求
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    proxyTable: {
+        "/api": {
+        target: "https://cms.chimm.xyz/user/",
+          changeOrigin: true,
+          pathRewrite: {
+            '^/api': ''
+          }
+        }
+      },
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
