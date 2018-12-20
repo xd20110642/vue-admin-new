@@ -34,20 +34,25 @@ export default new Router({
       },
       children:[
         {
-          path:'/guanli',
+          path:'guanli',
           name:'guanli',
           component:resolve => require(['@/page/guanli'],resolve)
         },
         {
-          path:'/zhiliao',
+          path:'zhiliao',
           name:'zhiliao',
           component:resolve => require(['@/page/gerenziliao'],resolve)
         },
         {//菜单栏展示路由地址  子路由加/ 就是把父路由的路径当成根路径
-          path: '/dashboard',
+          path: 'dashboard',
           name: 'dashboard',
           component: resolve => require(['@/page/daohang'], resolve)
         },
+        {
+          path:'table',
+          name:'table',
+          component:resolve => require(['@/page/table'],resolve)
+        }
       ]
     },
   

@@ -6,7 +6,9 @@
       class="el-menu-vertical-demo"
       router
       @open="handleOpen"
-      @close="handleClose">
+      @close="handleClose"
+      @select="getMess"
+      >
         <template v-for="item of items">
             <!-- 如果有二级菜单才渲染 否则不渲染 -->
             <template v-if="item.subs">
@@ -124,15 +126,25 @@ export default {
         }
     },
     methods: {
+        // 展开回调函数
       handleOpen(key, keyPath) {
         console.log(key, keyPath);
         console.log('--------');
         console.log(keyPath);
         console.log('--------');
-        console.log(key)
+        console.log(key);
+        console.log(1)
       },
+    //   关闭回调函数
       handleClose(key, keyPath) {
         console.log(key, keyPath);
+        console.log(2)
+      },
+    //   获取当前被激活的菜单
+      getMess(index,keyPath){
+          console.log(index+'菜单中的index');
+          console.warn("---------");
+          console.log(keyPath+'路径')
       }
     }
 }
