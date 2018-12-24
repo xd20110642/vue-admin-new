@@ -21,6 +21,18 @@ export default{
     // 设置名字
     SET_NAME(state,name){
         state.name=name
+    },
+    //设置返回回来的数组
+    SET_CONTACTARR(state,contactArr){
+        state.contactArr=contactArr
+    },
+    //设置总页数
+    SET_TotalPages(state,totalpages){
+        state.totalPages=totalpages;
+    },
+    //设置总条数
+    SET_total(state,total){
+        state.total=total;
     }
-    // 
+
 }

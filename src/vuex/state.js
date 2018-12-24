@@ -12,5 +12,8 @@ export default {
     roles: [],
     setting: {
         articlePlatform: []
-    }
+    },
+    contactArr:[],
+    totalPages:0,
+    total:0
 }

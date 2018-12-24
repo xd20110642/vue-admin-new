@@ -52,6 +52,11 @@ export default new Router({
           path:'table',
           name:'table',
           component:resolve => require(['@/page/table'],resolve)
+        },
+        {
+          path:'xiugai',
+          name:'xiugai',
+          component: resolve => require(['@/page/xiugai'],resolve)
         }
       ]
     },
